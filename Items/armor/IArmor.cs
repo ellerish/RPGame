@@ -7,11 +7,11 @@ namespace RPGame
      public interface IArmor
     {
          String Name { get; }
-         void BaseBonus(StatsAttributes stats);
+         void BaseBonus();
 
         //Void scale(Sats stas)
 
-       //  SlotType GetSlotType();
+         SlotType GetSlotType();
         //Fits into armor
         //Has a name 
         //Bonus to attributes depending   on type of armor and where

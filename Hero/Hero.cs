@@ -6,29 +6,54 @@ namespace RPGame.Hero
 {
     public abstract class Hero
     {
-        public String Name { get; set; }
+        protected string name;
 
-      //  public Attributes Attributes { get; set; }
-        public int Level { get; set; }
+        protected Stats stats;
+        protected int level;
 
-        public int ExperiencePoints { get; set; }
+        protected int experiencePoints;
 
         public Hero() { }
 
-         public Hero(string name, int level, int experiencePoints) {
-           // 
-             Name = name;
-            // Attributes = new Attributes(0,0,0,0);
-             Level = level;
-             ExperiencePoints = experiencePoints;
-         }
+        public Hero(string name)
+        {
 
-         public abstract void AddBaseStats(StatsAttributes stats);
+            this.name = name;
+            level = 1;
+            experiencePoints = 100;
 
-          public abstract void LevelUp();
-     
-       
+            stats = new Stats();
+        }
+
+        public void GainExperience(int xp)
+        {
+            int newXp = this.experiencePoints + xp;
+            int levelaccess = 200;
+
+            if (newXp >= levelaccess)
+            {
+                LevelUp();
+                this.level += 1;
+                this.experiencePoints = newXp;
+            }
+        }
+        protected abstract void SetStartsStats();
+
+        protected abstract void LevelUp();
+
+
+        //get currentsstats + extra sats 
+        //setLevel current level + 1?
+
+        public override string ToString()
+        {
+            return $"Name: {this.name} HP: {this.stats.Health}" +
+                $"Strength: {this.stats.Strength} Dexterity: {this.stats.Dexterity} " +
+                $"Intelligence: {this.stats.Strength } " +
+                $"Level: {this.level} XP: {this.experiencePoints}";
+        }
     }
+}
 
 
     //Type Warrior, Ranger, Mage
@@ -37,4 +62,7 @@ namespace RPGame.Hero
     // Attributes
     // Level : 
     // Experience Points  = XP 
-}
+
+
+
+

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPGame
 {
-    public class StatsAttributes
+    public class Stats
     {
         public int Health { get; set; }
         public int Strength { get; set; }
@@ -12,13 +12,12 @@ namespace RPGame
         public int Dexterity { get; set; }
 
         public int Intelligence { get; set; }
-        //public abstract void addHealth(int healt);
 
-        public StatsAttributes()
+        public Stats()
         {
         }
 
-        public StatsAttributes(int health, int strength, int dexterity, int intelligence)
+        public Stats(int health, int strength, int dexterity, int intelligence)
         {
             Health = health;
             Strength = strength;

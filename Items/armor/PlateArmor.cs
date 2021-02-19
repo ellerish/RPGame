@@ -8,7 +8,12 @@ namespace RPGame
     {
         public string Name => throw new NotImplementedException();
 
-        public void BaseBonus(StatsAttributes stats)
+        public void BaseBonus(Stats stats)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void BaseBonus()
         {
             throw new NotImplementedException();
         }

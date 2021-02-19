@@ -8,12 +8,20 @@ namespace RPGame.Hero
     {
         public Ranger() : base() { }
 
-        public Ranger(string name, int level, int experiencePoints) :
-            base(name, level, experiencePoints)
+        public Ranger(string name) : base(name)
         {
+            SetStartsStats();
         }
 
-        public override void AddBaseStats(StatsAttributes stats)
+        protected override void LevelUp()
+        {
+            stats.Health += 20;
+            stats.Strength += 2;
+            stats.Dexterity += 5;
+            stats.Intelligence += 1;
+        }
+    
+        protected override void SetStartsStats()
         {
             stats.Health = 120;
             stats.Strength = 5;
@@ -21,9 +29,5 @@ namespace RPGame.Hero
             stats.Intelligence = 2;
         }
 
-        public override void LevelUp()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

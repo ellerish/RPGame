@@ -16,7 +16,7 @@ namespace RPGame
         public string Name => throw new NotImplementedException();
 
 
-        public void BaseBonus(StatsAttributes stats)
+        public void BaseBonus(Stats stats)
         {
             stats.Health = 10;
             stats.Intelligence = 3;
@@ -24,6 +24,14 @@ namespace RPGame
             stats.Strength = 0;
         }
 
- 
+        public void BaseBonus()
+        {
+            throw new NotImplementedException();
+        }
+
+        public SlotType GetSlotType()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

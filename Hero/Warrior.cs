@@ -8,22 +8,26 @@ namespace RPGame.Hero
     {
         public Warrior() : base() { }
 
-        public Warrior(string name, int level, int experiencePoints) :
-            base(name, level, experiencePoints)
+        public Warrior(string name) :
+            base(name)
         {
+            SetStartsStats();
         }
 
-        public override void AddBaseStats(StatsAttributes stats)
+        protected override void LevelUp()
+        {
+            stats.Health += 30;
+            stats.Strength += 5;
+            stats.Dexterity += 2;
+            stats.Intelligence += 1;
+        }
+
+        protected override void SetStartsStats()
         {
             stats.Health = 150;
             stats.Strength = 10;
             stats.Dexterity = 3;
             stats.Intelligence = 1;
-        }
-
-        public override void LevelUp()
-        {
-            throw new NotImplementedException();
         }
     }
 }

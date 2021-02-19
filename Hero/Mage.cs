@@ -8,35 +8,34 @@ namespace RPGame.Hero
     {
         public Mage(): base() { }
 
-        public Mage(string name, int level, int experiencePoints): 
-            base(name, level, experiencePoints)
+        public Mage(string name) : base(name)
         {
-
-        }
-        public override void AddBaseStats(StatsAttributes stats)
-        {
-            stats.Health = 100;
-            stats.Strength = 2;
-            stats.Dexterity = 3;
-            stats.Intelligence = 10;
-            Console.WriteLine($"HP: {stats.Health}" +
-                $" Strenght: {stats.Strength} Dexterity : {stats.Dexterity}" +
-                $" Intelligence: {stats.Intelligence} ");
-
-            return;
+           SetStartsStats();
         }
 
-
-        public override void LevelUp()
+        protected override void LevelUp()
         {
-            throw new NotImplementedException();
+            stats.Health +=  15;
+            stats.Strength += 1;
+            stats.Dexterity +=  2;
+            stats.Intelligence += 5;
         }
 
-        //Attributes level 1
-        //Health = 100HP
-        //STrength = 2
-        //Dexterity = 3
-        // Intelligence = 10
+        protected override void SetStartsStats()
+        {
+              stats.Health = 100;
+              stats.Strength = 2;
+              stats.Dexterity = 3;
+              stats.Intelligence = 10;
 
+        }
+
+        public override string ToString()
+        {
+            return $"Name: {this.name} HP: {stats.Health} " +
+                $"Strength: {this.stats.Strength} Dexterity: {this.stats.Dexterity} " +
+                $"Intelligence: {this.stats.Intelligence } " +
+                $"Level: {this.level} XP: {this.experiencePoints}";
+        }
     }
 }
