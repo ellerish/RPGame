@@ -7,10 +7,13 @@ namespace RPGame
     interface IArmors
     {
         //BAseBonus 
+
+        //CalculateBonus scale level
+
         void InitBonus(Stats bonus);
         void LevelBonus(Stats bonus, int level);
 
-        void SetSlotType(SlotType s);
+        void SetSlotType(ArmorType s);
        
         //ScaleCalulation
     }

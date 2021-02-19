@@ -17,6 +17,14 @@ namespace RPGame.Hero
             Ranger ra = new Ranger("Rrr");
             Console.WriteLine(ra.ToString());
 
+            ClothArmor armor = new ClothArmor("protecting shit");
+            Console.WriteLine(armor.ToString());
+
+            LeatherArmor armorL = new LeatherArmor("I'm leather");
+            Console.WriteLine(armorL.ToString());
+
+            PlateArmor armorP = new PlateArmor("I'm plate");
+            Console.WriteLine(armorP.ToString());
 
         }
     }

@@ -29,13 +29,5 @@ namespace RPGame.Hero
               stats.Intelligence = 10;
 
         }
-
-        public override string ToString()
-        {
-            return $"Name: {this.name} HP: {stats.Health} " +
-                $"Strength: {this.stats.Strength} Dexterity: {this.stats.Dexterity} " +
-                $"Intelligence: {this.stats.Intelligence } " +
-                $"Level: {this.level} XP: {this.experiencePoints}";
-        }
     }
 }

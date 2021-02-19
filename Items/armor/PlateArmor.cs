@@ -4,23 +4,34 @@ using System.Text;
 
 namespace RPGame
 {
-    class PlateArmor : IArmor
+    class PlateArmor : Armor
     {
-        public string Name => throw new NotImplementedException();
 
-        public void BaseBonus(Stats stats)
+        public PlateArmor() : base() { }
+
+        public PlateArmor(string name) : base(name)
         {
-            throw new NotImplementedException();
+            SetBaseStats();
+            SetArmorType();
         }
 
-        public void BaseBonus()
+        protected override void SetArmorType()
         {
-            throw new NotImplementedException();
+            armorType = ArmorType.Plate;
         }
 
-        public SlotType GetSlotType()
+        protected override void SetBaseStats()
         {
-            throw new NotImplementedException();
+            stats.Health = 30;
+            stats.Dexterity = 1;
+            stats.Strength = 3;
+        }
+
+        public override string ToString()
+        {
+            return $"Item stats for: {name}\nType: {armorType}\n" +
+                $"Bonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
+                 $"Bonus strength: {stats.Strength}\nLevel: {level}";
         }
     }
 }

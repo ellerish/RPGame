@@ -33,24 +33,20 @@ namespace RPGame.Hero
             if (newXp >= levelaccess)
             {
                 LevelUp();
-                this.level += 1;
-                this.experiencePoints = newXp;
+                level += 1;
+                experiencePoints = newXp;
             }
         }
         protected abstract void SetStartsStats();
 
         protected abstract void LevelUp();
 
-
-        //get currentsstats + extra sats 
-        //setLevel current level + 1?
-
         public override string ToString()
         {
-            return $"Name: {this.name} HP: {this.stats.Health}" +
-                $"Strength: {this.stats.Strength} Dexterity: {this.stats.Dexterity} " +
-                $"Intelligence: {this.stats.Strength } " +
-                $"Level: {this.level} XP: {this.experiencePoints}";
+            return $"Name: {name} HP: {stats.Health}" +
+                $" Strength: {stats.Strength} Dexterity: {stats.Dexterity} " +
+                $"Intelligence: {stats.Strength } " +
+                $"Level: {level} XP: {experiencePoints}";
         }
     }
 }

@@ -4,23 +4,34 @@ using System.Text;
 
 namespace RPGame
 {
-    class LeatherArmor : IArmor
+    class LeatherArmor : Armor
     {
-        public string Name => throw new NotImplementedException();
 
-        public void BaseBonus(Stats stats)
+        public LeatherArmor() : base() { }
+
+        public LeatherArmor(string name) : base(name)
         {
-            throw new NotImplementedException();
+            SetBaseStats();
+            SetArmorType();
         }
 
-        public void BaseBonus()
+        protected override void SetArmorType()
         {
-            throw new NotImplementedException();
+            armorType = ArmorType.Leather;
         }
 
-        public SlotType GetSlotType()
+        protected override void SetBaseStats()
         {
-            throw new NotImplementedException();
+            stats.Health = 20;
+            stats.Dexterity = 3;
+            stats.Strength = 1;
+        }
+
+        public override string ToString()
+        {
+            return $"Item stats for: {name}\nType: {armorType}\n" +
+                $"Bonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
+                 $"Bonus strength: {stats.Strength}\nLevel: {level}";
         }
     }
 }
