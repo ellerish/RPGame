@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame.Items
+namespace RPGame
 {
     public enum SlotType
     {

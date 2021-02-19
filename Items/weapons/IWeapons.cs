@@ -6,7 +6,7 @@ namespace RPGame.Items.weapons
 {
     interface IWeapons
     {
-
+        string Name { get; }
         //name
         //"meele wapons", "ranged weapons" og "magic weapons".
     }

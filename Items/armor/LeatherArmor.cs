@@ -2,9 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame.Items.armor
+namespace RPGame
 {
-    class LeatherArmor
+    class LeatherArmor : IArmor
     {
+        public string Name => throw new NotImplementedException();
+
+        public void BaseBonus(StatsAttributes stats)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SlotType GetSlotType()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
