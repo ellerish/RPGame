@@ -4,16 +4,16 @@ using System.Text;
 
 namespace RPGame
 {
-    interface IArmors
+    interface IArmor
     {
         //BAseBonus 
 
         //CalculateBonus scale level
 
-        void InitBonus(Stats bonus);
-        void LevelBonus(Stats bonus, int level);
+        void InitBonus();
+        void LevelBonus();
 
-        void SetSlotType(ArmorType s);
+        void SetSlotType();
        
         //ScaleCalulation
     }

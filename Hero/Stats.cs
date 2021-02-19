@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame
+namespace RPGame.Hero
 {
     public class Stats
     {

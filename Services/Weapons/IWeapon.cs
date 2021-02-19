@@ -7,7 +7,7 @@ namespace RPGame
     interface IWeapons
     {
         //Base damaged
-
+        void DamagedDealt();
         //scale caluclations
     }
 }

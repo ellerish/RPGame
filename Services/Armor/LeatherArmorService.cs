@@ -6,6 +6,14 @@ namespace RPGame
 {
     class LeatherArmorService
     {
-        //calulclate bonus and level bonus
+        public LeatherArmorService()
+        {
+         
+        }
+
+        public void AddLeatherArmor()
+        {
+            
+        }
     }
 }

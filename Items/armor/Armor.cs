@@ -1,8 +1,9 @@
-﻿using System;
+﻿using RPGame.Hero;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame
+namespace RPGame.Items.armor
 {
     public abstract class Armor
     {

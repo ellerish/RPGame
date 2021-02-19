@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPGame.Hero
 {
-    class Warrior : Hero
+    public class Warrior : Hero
     {
         public Warrior() : base() { }
 

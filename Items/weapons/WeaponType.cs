@@ -4,7 +4,10 @@ using System.Text;
 
 namespace RPGame.Items.weapons
 {
-    class MagicWeapons
+    public enum WeaponType
     {
+        Meele, 
+        Ranged, 
+        Magic
     }
 }

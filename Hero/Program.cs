@@ -1,6 +1,9 @@
-﻿using System;
+﻿using RPGame.Hero;
+using RPGame.Items.armor;
+using RPGame.Items.weapons;
+using System;
 
-namespace RPGame.Hero
+namespace RPGame
 {
     class Program
     {
@@ -25,6 +28,12 @@ namespace RPGame.Hero
 
             PlateArmor armorP = new PlateArmor("I'm plate");
             Console.WriteLine(armorP.ToString());
+
+            MagicWeapon magic = new MagicWeapon("I'm magic");
+            Console.WriteLine(magic.ToString());
+
+            MeleeWeapon meele = new MeleeWeapon("I'm meeele");
+            Console.WriteLine(meele.ToString());
 
         }
     }

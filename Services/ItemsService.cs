@@ -1,12 +1,14 @@
-﻿using System;
+﻿using RPGame.Hero;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame
+namespace RPGame.Services
 
 {
     class ItemsService
     {
+
         //add()
         //Remove()
         //GET AROMUR

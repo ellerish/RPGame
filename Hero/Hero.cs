@@ -24,12 +24,14 @@ namespace RPGame.Hero
 
             stats = new Stats();
         }
+        
+      
 
         public void GainExperience(int xp)
         {
             int newXp = this.experiencePoints + xp;
-            int levelaccess = 200;
-
+            int levelaccess = 200; //method for each level access
+            
             if (newXp >= levelaccess)
             {
                 LevelUp();
