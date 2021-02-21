@@ -23,5 +23,11 @@ namespace RPGame.Items.weapons
         {
             weaponType = WeaponType.Magic;
         }
+
+        public void LevelScale(int level)
+        {
+            this.baseDamage = baseDamage + (2 * level);
+            this.level = level;
+        }
     }
 }

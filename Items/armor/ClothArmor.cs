@@ -23,8 +23,21 @@ namespace RPGame.Items.armor
         protected override void SetBaseStats()
         {
             stats.Health = 10;
-            stats.Dexterity = 3;
+            stats.Dexterity = 1;
             stats.Intelligence = 3;
+        }
+
+        public void ScaleStats(int level)
+        {
+            //runde ned
+            double result = (stats.Health + 5 * level) * 0.6;
+            stats.Health = (int)Math.Floor (result);
+
+            double resultDex = (stats.Dexterity + 1 * level) * 0.6;
+            stats.Dexterity = (int) Math.Floor(resultDex);
+
+            double resultInt = (stats.Intelligence + 2 * level) * 0.6;
+            stats.Intelligence = (int) Math.Floor(resultInt);
         }
 
         public override string ToString()

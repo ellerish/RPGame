@@ -23,5 +23,11 @@ namespace RPGame.Items.weapons
         {
             weaponType = WeaponType.Meele;
         }
+
+        public void LevelScale(int level)
+        {
+            this.baseDamage = baseDamage + (2 * level);
+            this.level = level;
+        }
     }
 }

@@ -2,11 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame.Factory.WeaponsFactory
+namespace RPGame
 {
-    class MeeleWeaponService
+    class MeeleWeaponService : IWeapons
     {
+        public void DamagedDealt()
+        {
+        }
 
-        //Strength
+     /*   public void LevelScale(int level)
+        {
+            int dam = 15 + (2 * level);
+           // return dam;
+            Console.WriteLine($"Damage delt Meele: {dam}");
+        }*/
+
+
     }
 }

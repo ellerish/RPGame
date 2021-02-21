@@ -8,6 +8,8 @@ namespace RPGame
     {
         //Base damaged
         void DamagedDealt();
+       // void LevelScale(int level);
+
         //scale caluclations
     }
 }
