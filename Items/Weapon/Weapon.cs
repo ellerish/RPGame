@@ -9,13 +9,14 @@ namespace RPGame.Items.weapons
     {
         protected string name;
 
-        protected int level;
+        public int level;
 
         protected Stats stats;
 
-        protected WeaponType weaponType;
+        public WeaponType weaponType;
 
-        protected int baseDamage;
+        public int baseDamage;
+
         public Weapon() { }
 
         public Weapon(string name)
@@ -30,7 +31,7 @@ namespace RPGame.Items.weapons
 
         public override string ToString()
         {
-            return $"Item stats for: {name}\nWeapon Type: {weaponType}\n" +
+            return $"\nItem stats for: {name}\nWeapon Type: {weaponType}\n" +
                 $"Level: {level}\nDamage: {baseDamage}";
         }
     }

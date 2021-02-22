@@ -52,7 +52,7 @@ namespace RPGame.Items.armor
 
         public override string ToString()
         {
-            return $"Item stats for: {name}\nType: {armorType}\n" +
+            return $"\nItem stats for: {name}\nType: {armorType}\n" +
                 $"Bonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
                  $"Bonus intelligence: {stats.Intelligence}\nLevel: {level}";
         }

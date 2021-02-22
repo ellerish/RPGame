@@ -66,10 +66,10 @@ namespace RPGame.Hero
 
         public override string ToString()
         {
-            return $"Name: {name} HP: {stats.Health}" +
-                $" Strength: {stats.Strength} Dexterity: {stats.Dexterity} " +
-                $"Intelligence: {stats.Intelligence } " +
-                $"Level: {level} XP: {experiencePoints}" +
+            return $"\nName: {name}\nHP: {stats.Health}\n" +
+                $"Strength: {stats.Strength}\nDexterity: {stats.Dexterity} \n" +
+                $"Intelligence: {stats.Intelligence}\n" +
+                $"Level: {level} \n" +
                 $"XPtoNext: {GetXpToNext()}";
         }
     }
