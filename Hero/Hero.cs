@@ -13,7 +13,7 @@ namespace RPGame.Hero
 
         protected int experiencePoints;
 
-        protected double XptoNext;
+        protected int xpToNext;
 
         public Hero() { }
 
@@ -23,39 +23,44 @@ namespace RPGame.Hero
             this.name = name;
             level = 1;
             experiencePoints = 0;
-            XptoNext = 100;
+            xpToNext = 100; 
 
             stats = new Stats();
         }
-        
-        // XP to next 
-        public void xpTo()
+        public int GetXpToNext()
         {
-            if(level == 1)
-            {
-                XptoNext = 100;
-
-            }
-            int ch = level - 1;
-            double res = Math.Pow(1.1, ch);
-            Console.WriteLine(res);
-            XptoNext = XptoNext * res;
+            return xpToNext - experiencePoints;
         }
-            
+
+        public void XpTo()
+        {
+            int expo = level - 1;
+            double res = Math.Pow(1.1, expo) * 100;
+            Console.WriteLine(res);
+            xpToNext = (int) Math.Floor(res);
+        }
+
+        public Boolean CanLevelUp()
+        {
+            if (xpToNext <= experiencePoints)
+            {
+                return true;
+            }
+            return false;
+        }
 
         public void GainExperience(int xp)
         {
-            int newXp = this.experiencePoints + xp;
-            int levelaccess = 100; //method for each level access
-
-           
-            
-            if (newXp >= levelaccess)
+            experiencePoints += xp;
+            while(CanLevelUp())
             {
                 LevelUp();
                 level += 1;
-                experiencePoints = newXp;
+                experiencePoints -= xpToNext;
+                XpTo();
             }
+          //  XptoNext = experiencePoints - XptoNext;
+
         }
         protected abstract void SetStartsStats();
 
@@ -65,20 +70,13 @@ namespace RPGame.Hero
         {
             return $"Name: {name} HP: {stats.Health}" +
                 $" Strength: {stats.Strength} Dexterity: {stats.Dexterity} " +
-                $"Intelligence: {stats.Strength } " +
+                $"Intelligence: {stats.Intelligence } " +
                 $"Level: {level} XP: {experiencePoints}" +
-                $"XPtoNext: {XptoNext}";
+                $"XPtoNext: {GetXpToNext()}";
         }
     }
 }
 
-
-    //Type Warrior, Ranger, Mage
-    //name
-    // id
-    // Attributes
-    // Level : 
-    // Experience Points  = XP 
 
 
 

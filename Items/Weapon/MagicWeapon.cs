@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGame.Hero;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -24,10 +25,18 @@ namespace RPGame.Items.weapons
             weaponType = WeaponType.Magic;
         }
 
-        public void LevelScale(int level)
+        public int LevelScale(int level)
         {
-            this.baseDamage = baseDamage + (2 * level);
+            baseDamage += (2 * level);
             this.level = level;
+            return baseDamage;
         }
+
+        public int DamageScale(Stats stats)
+        {
+            return 3 * stats.Intelligence;
+        }
+
+         
     }
 }

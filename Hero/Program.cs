@@ -1,5 +1,6 @@
 ﻿using RPGame.Hero;
 using RPGame.Items.armor;
+using RPGame.Items.ItemSlots;
 using RPGame.Items.weapons;
 using System;
 
@@ -11,8 +12,13 @@ namespace RPGame
         {
 
             Warrior wa = new Warrior("Warr");
-            wa.GainExperience(100);
-            wa.xpTo();
+            wa.GainExperience(1200);
+            //  wa.GainExperience(200);
+
+           // wa.LevelCheck(464);
+            //wa.GainExperience(200);
+            //  wa.GainExperience(30);
+            // wa.xpTo();
             Console.WriteLine(wa.ToString());
 
             MeleeWeapon meele = new MeleeWeapon("I'm meeele");
@@ -24,12 +30,18 @@ namespace RPGame
             Console.WriteLine(rangedWeapon.ToString());
 
             MagicWeapon magic = new MagicWeapon("MagicWeapon");
-            magic.LevelScale(2);
+            magic.LevelScale(5);
             Console.WriteLine(magic.ToString());
 
             ClothArmor armor = new ClothArmor("protecting shit");
-            armor.ScaleStats(10);
+            armor.ScaleStatsByLevel(10, Slots.Legs);
             Console.WriteLine(armor.ToString());
+
+
+            PlateArmor armorP = new PlateArmor("I'm plate");
+            armorP.ScaleStatsByLevel(5, Slots.Body);
+            Console.WriteLine(armorP.ToString());
+
 
             /* Mage mage = new Mage("Magica");
              mage.GainExperience(120);
@@ -57,5 +69,6 @@ namespace RPGame
              Console.WriteLine(meele.ToString());
             */
         }
+
     }
 }

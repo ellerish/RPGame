@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGame.Hero;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,6 +10,8 @@ namespace RPGame.Items.weapons
         protected string name;
 
         protected int level;
+
+        protected Stats stats;
 
         protected WeaponType weaponType;
 

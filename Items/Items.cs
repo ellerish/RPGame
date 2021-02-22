@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame.Items.armor
+namespace RPGame.Items
 {
-    public enum Slottype
+    class Items
     {
-      
-
     }
 }

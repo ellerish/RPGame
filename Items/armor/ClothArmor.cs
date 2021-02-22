@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGame.Items.ItemSlots;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,16 +28,15 @@ namespace RPGame.Items.armor
             stats.Intelligence = 3;
         }
 
-        public void ScaleStats(int level)
-        {
-            //runde ned
-            double result = (stats.Health + 5 * level) * 0.6;
+        public void ScaleStatsByLevel(int level, Slots slot)
+        {          
+            double result = (stats.Health + 5 * level) * (int)slot/100;
             stats.Health = (int)Math.Floor (result);
 
-            double resultDex = (stats.Dexterity + 1 * level) * 0.6;
+            double resultDex = (stats.Dexterity + 1 * level) * (int)slot / 100;
             stats.Dexterity = (int) Math.Floor(resultDex);
 
-            double resultInt = (stats.Intelligence + 2 * level) * 0.6;
+            double resultInt = (stats.Intelligence + 2 * level) * (int)slot / 100;
             stats.Intelligence = (int) Math.Floor(resultInt);
         }
 

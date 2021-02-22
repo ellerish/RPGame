@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPGame.Items.ItemSlots;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -25,6 +26,18 @@ namespace RPGame.Items.armor
             stats.Health = 20;
             stats.Dexterity = 3;
             stats.Strength = 1;
+        }
+
+        public void ScaleStatsByLevel(int level, Slots slot)
+        {
+            double result = (stats.Health + 8 * level) * (int)slot / 100;
+            stats.Health = (int)Math.Floor(result);
+
+            double resultDex = (stats.Dexterity + 2 * level) * (int)slot / 100;
+            stats.Dexterity = (int)Math.Floor(resultDex);
+
+            double resultStrength = (stats.Strength + 1 * level) * (int)slot / 100;
+            stats.Strength = (int)Math.Floor(resultStrength);
         }
 
         public override string ToString()

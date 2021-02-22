@@ -1,4 +1,7 @@
 ﻿using RPGame.Hero;
+using RPGame.Items.armor;
+using RPGame.Items.ItemSlots;
+using RPGame.Items.weapons;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -6,8 +9,16 @@ using System.Text;
 namespace RPGame.Services
 
 {
-    class ItemsService
+    interface ItemsService
     {
+
+        void add(Armor armor, Slots slotType);
+
+        void add(Weapon weapon);
+
+       
+
+
 
         //add()
         //Remove()

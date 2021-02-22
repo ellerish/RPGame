@@ -1,4 +1,5 @@
 ﻿using RPGame.Hero;
+using RPGame.Items.ItemSlots;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +15,9 @@ namespace RPGame.Items.armor
         protected Stats stats;
 
         protected ArmorType armorType;
+
+        protected Slots slot;
+
         public Armor() { }
 
         public Armor(string name)
@@ -22,6 +26,7 @@ namespace RPGame.Items.armor
             level = 1;
             stats = new Stats();
         }
+
 
         protected abstract void SetBaseStats();
 
