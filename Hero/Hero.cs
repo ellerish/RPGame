@@ -8,8 +8,8 @@ namespace RPGame.Hero
     {
         protected string name;
 
-        protected Stats stats;
-        protected int level;
+        public Stats stats;
+        public int level;
 
         protected int experiencePoints;
 
@@ -35,9 +35,9 @@ namespace RPGame.Hero
         public void XpTo()
         {
             int expo = level - 1;
-            double res = Math.Pow(1.1, expo) * 100;
-            Console.WriteLine(res);
-            xpToNext = (int) Math.Floor(res);
+            double resXpToNext = Math.Pow(1.1, expo) * 100;
+            Console.WriteLine(resXpToNext);
+            xpToNext = (int) Math.Floor(resXpToNext);
         }
 
         public Boolean CanLevelUp()
@@ -59,8 +59,6 @@ namespace RPGame.Hero
                 experiencePoints -= xpToNext;
                 XpTo();
             }
-          //  XptoNext = experiencePoints - XptoNext;
-
         }
         protected abstract void SetStartsStats();
 

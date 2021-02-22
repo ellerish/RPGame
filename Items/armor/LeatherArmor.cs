@@ -28,7 +28,7 @@ namespace RPGame.Items.armor
             stats.Strength = 1;
         }
 
-        public void ScaleStatsByLevel(int level, Slots slot)
+        public void ScaleStatsByLevelAndSlot(int level, Slots slot)
         {
             double result = (stats.Health + 8 * level) * (int)slot / 100;
             stats.Health = (int)Math.Floor(result);
@@ -38,6 +38,7 @@ namespace RPGame.Items.armor
 
             double resultStrength = (stats.Strength + 1 * level) * (int)slot / 100;
             stats.Strength = (int)Math.Floor(resultStrength);
+            this.level = level;
         }
 
         public override string ToString()

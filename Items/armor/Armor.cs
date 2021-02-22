@@ -10,11 +10,11 @@ namespace RPGame.Items.armor
     {
         protected string name;
 
-        protected int level;
+        public int level;
 
-        protected Stats stats;
+        public Stats stats;
 
-        protected ArmorType armorType;
+        public ArmorType armorType;
 
         protected Slots slot;
 
@@ -31,6 +31,7 @@ namespace RPGame.Items.armor
         protected abstract void SetBaseStats();
 
         protected abstract void SetArmorType();
+
 
     }
 }

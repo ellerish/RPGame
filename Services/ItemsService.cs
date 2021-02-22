@@ -11,10 +11,8 @@ namespace RPGame.Services
 {
     interface ItemsService
     {
+        void EquipArmor(Armor armor, Slots slot);
 
-        void add(Armor armor, Slots slotType);
-
-        void add(Weapon weapon);
 
        
 

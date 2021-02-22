@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RPGame.Items.armor;
+using RPGame.Items.ItemSlots;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

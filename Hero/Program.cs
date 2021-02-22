@@ -10,9 +10,22 @@ namespace RPGame
     {
         static void Main(string[] args)
         {
+            Mage mage = new Mage("Magica");
+            mage.GainExperience(120);
+            Console.WriteLine(mage.ToString());
 
-            Warrior wa = new Warrior("Warr");
-            wa.GainExperience(1200);
+            ClothArmor armor = new ClothArmor("protecting shit");
+            armor.ScaleStatsByLevelAndSlot(1, Slots.Legs);
+            Console.WriteLine(armor.ToString());
+
+            //mage.EquipArmor(armor, Slots.Body);
+            HeroService serive = new HeroService(mage);
+            serive.EquipArmor(armor, Slots.Body);
+            Console.WriteLine(mage.ToString());
+
+
+          /*  Warrior wa = new Warrior("Warr");
+            wa.GainExperience(464);
             //  wa.GainExperience(200);
 
            // wa.LevelCheck(464);
@@ -33,13 +46,11 @@ namespace RPGame
             magic.LevelScale(5);
             Console.WriteLine(magic.ToString());
 
-            ClothArmor armor = new ClothArmor("protecting shit");
-            armor.ScaleStatsByLevel(10, Slots.Legs);
-            Console.WriteLine(armor.ToString());
+   
 
 
             PlateArmor armorP = new PlateArmor("I'm plate");
-            armorP.ScaleStatsByLevel(5, Slots.Body);
+            armorP.ScaleStatsByLevelAndSlot(15, Slots.Body);
             Console.WriteLine(armorP.ToString());
 
 

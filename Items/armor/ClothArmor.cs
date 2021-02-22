@@ -28,7 +28,15 @@ namespace RPGame.Items.armor
             stats.Intelligence = 3;
         }
 
-        public void ScaleStatsByLevel(int level, Slots slot)
+        public void ScaleStatsByLevel(int level)
+        {
+            stats.Health += 5 * level;
+            stats.Dexterity += 1 * level;
+            stats.Intelligence += 2 * level;
+            this.level = level;
+        }
+
+        public void ScaleStatsByLevelAndSlot(int level, Slots slot)
         {          
             double result = (stats.Health + 5 * level) * (int)slot/100;
             stats.Health = (int)Math.Floor (result);
@@ -38,6 +46,8 @@ namespace RPGame.Items.armor
 
             double resultInt = (stats.Intelligence + 2 * level) * (int)slot / 100;
             stats.Intelligence = (int) Math.Floor(resultInt);
+
+            this.level = level;
         }
 
         public override string ToString()
