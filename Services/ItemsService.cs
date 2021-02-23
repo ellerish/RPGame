@@ -14,20 +14,5 @@ namespace RPGame.Services
         void EquipArmor(Armor armor, Slots slot);
 
         void EquipWeapon(Weapon weapon);
-       
-
-
-
-        //add()
-        //Remove()
-        //GET AROMUR
-        //get ClothArmour
-        //get LeatherArmor
-        //get PlateArmor
-
-        //get weapons
-        //get magic weapon
-        //get meeele weapons
-        //get Ranged weapon
     }
 }

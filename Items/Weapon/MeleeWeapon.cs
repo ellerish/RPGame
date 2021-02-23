@@ -32,7 +32,7 @@ namespace RPGame.Items.weapons
             return baseDamage;
         }
 
-        public int DamageScale(Stats stats)
+        public int DamageScale()
         {
             return (int)1.5 * stats.Strength;
         }

@@ -27,7 +27,6 @@ namespace RPGame.Items.armor
             stats = new Stats();
         }
 
-
         protected abstract void SetBaseStats();
 
         protected abstract void SetArmorType();

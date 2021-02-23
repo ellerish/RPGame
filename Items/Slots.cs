@@ -9,6 +9,6 @@ namespace RPGame.Items.ItemSlots
        Head = 80, 
        Body = 100, 
        Legs = 60,
-       Armor
+       Weapon
     }
 }

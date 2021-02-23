@@ -11,20 +11,29 @@ namespace RPGame
         static void Main(string[] args)
         {
             Mage mage = new Mage("Magica");
-            mage.GainExperience(400);
+            mage.GainExperience(4000);
             Console.WriteLine(mage.ToString());
            
             ClothArmor armor = new ClothArmor("protecting shit");
-            armor.ScaleStatsByLevelAndSlot(10, Slots.Legs);
+            armor.ScaleStatsByLevelAndSlot(2, Slots.Legs);
             Console.WriteLine(armor.ToString());
 
             MagicWeapon magic = new MagicWeapon("MagicWeapon");
-            magic.LevelScale(11);
+            magic.LevelScale(20);
+
+            MagicWeapon magic2 = new MagicWeapon("MagicWeapon2");
+            magic.LevelScale(1);
+            MeleeWeapon meele = new MeleeWeapon("I'm meeele");
+            meele.LevelScale(5);
 
             HeroService service = new HeroService(mage);
-            service.EquipArmor(armor, Slots.Legs);
+            service.attack();
+           // service.EquipArmor(armor, Slots.Body);
             service.EquipWeapon(magic);
-
+            service.attack();
+            /*service.EquipWeapon(magic2);
+            service.EquipWeapon(meele);
+            service.attack();
 
 
          /*   //mage.EquipArmor(armor, Slots.Body);
