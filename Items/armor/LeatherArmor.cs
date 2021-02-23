@@ -5,11 +5,13 @@ using System.Text;
 
 namespace RPGame.Items.armor
 {
+    //Inherit from parent: Armor
     class LeatherArmor : Armor
     {
 
         public LeatherArmor() : base() { }
 
+        //Sets type and base attributes(stats) on creation
         public LeatherArmor(string name, Slots slot) : base(name, slot)
         {
             SetBaseStats();
@@ -28,6 +30,7 @@ namespace RPGame.Items.armor
             stats.Strength = 1;
         }
 
+        //Calculate new attributes(stats) based on level and slot
         public void ScaleStatsByLevelAndSlot(int level)
         {
             double result = (stats.Health + 8 * level) * (int)slot / 100;

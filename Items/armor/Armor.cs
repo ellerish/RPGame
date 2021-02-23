@@ -6,6 +6,7 @@ using System.Text;
 
 namespace RPGame.Items.armor
 {
+    //Parent class Armor
     public abstract class Armor
     {
         protected string name;
@@ -14,6 +15,7 @@ namespace RPGame.Items.armor
 
         public Stats stats;
 
+        //Sets type: Cloth, Leather, Armor
         public ArmorType armorType;
 
         public Slots slot;
@@ -28,8 +30,10 @@ namespace RPGame.Items.armor
             this.slot = slot;
         }
 
+        //All amors generate baseStats(Attributes)
         protected abstract void SetBaseStats();
 
+        //All amors has a type(Type of armor)
         protected abstract void SetArmorType();
 
 

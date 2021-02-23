@@ -4,6 +4,7 @@ using System.Text;
 
 namespace RPGame.Hero
 {
+    //Defining Attributes, getter, setters
     public class Stats
     {
         public int Health { get; set; }

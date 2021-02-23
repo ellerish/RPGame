@@ -5,9 +5,10 @@ using System.Text;
 
 namespace RPGame.Items.weapons
 {
+    //Inherit from parent: Weapon
+
     class MagicWeapon : Weapon
     {
-
         public MagicWeapon() : base() { }
 
         public MagicWeapon(string name) : base(name)

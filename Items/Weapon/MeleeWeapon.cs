@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace RPGame.Items.weapons
-
 {
-    class MeleeWeapon: Weapon
+    //Inherit from parent: Weapon
+    class MeleeWeapon : Weapon
     {
         public MeleeWeapon() : base() { }
 

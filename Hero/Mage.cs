@@ -6,6 +6,11 @@ using System.Text;
 
 namespace RPGame.Hero
 {
+    /*
+    * Inherit from Hero.
+    * Set start attributes/stats
+    * LevelUp - get extra attributes/stats pr level
+   */
     public class Mage: Hero
     {
         public Mage(): base() { }

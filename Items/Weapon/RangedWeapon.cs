@@ -5,7 +5,8 @@ using System.Text;
 
 namespace RPGame.Items.weapons
 {
-    class RangedWeapon: Weapon
+    //Inherit from parent: Weapon
+    class RangedWeapon : Weapon
     {
         public RangedWeapon() : base() { }
 

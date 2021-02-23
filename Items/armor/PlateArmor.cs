@@ -5,11 +5,12 @@ using System.Text;
 
 namespace RPGame.Items.armor
 {
+    //Inherit from parent: Armor
     class PlateArmor : Armor
     {
-
         public PlateArmor() : base() { }
 
+        //Sets type and base attributes(stats) on creation
         public PlateArmor(string name, Slots slot) : base(name, slot)
         {
             SetBaseStats();
@@ -28,6 +29,7 @@ namespace RPGame.Items.armor
             stats.Strength = 3;
         }
 
+        //Calculate new attributes(stats) based on level and slot
         public void ScaleStatsByLevelAndSlot(int level)
         {
             double result = (stats.Health + 12 * level) * (int)slot / 100;

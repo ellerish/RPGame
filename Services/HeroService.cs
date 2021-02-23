@@ -14,42 +14,71 @@ namespace RPGame.Hero
 
         protected int damage;
 
-        /*Armor head;
-        Armor body;
-        Armor legs;*/
+        protected int weaponSlot;
+        protected Stats bonus;
 
-        Slots slots;
-        int weaponSlot;
-        int armorslot;
-        public Stats bonus;
+        protected int legArmor;
+        protected int bodyArmor;
+        protected int headArmor;
 
         public HeroService(Hero hero)
         {
             this.hero = hero;
             weaponSlot = 0;
-            armorslot = 0;
             bonus = new Stats();
-            // bonus;
+            headArmor = 0;
+            bodyArmor = 0;
+            legArmor = 0;
         }
 
         public void NewStats(Armor armor)
         {
-            bonus.Health = hero.stats.Health += armor.stats.Health;
-            bonus.Strength = hero.stats.Strength += armor.stats.Strength;
-            bonus.Dexterity = hero.stats.Dexterity += armor.stats.Dexterity;
-            bonus.Intelligence = hero.stats.Intelligence += armor.stats.Intelligence;
-            //  heroSlot = slots;
-            //  Console.WriteLine($"{slots} = {heroSlot}");
+            if(headArmor != 0)
+            {
+                RemoveExistingArmour();
+               
+            } else if(bodyArmor != 0)
+            {
+                RemoveExistingArmour();
+            } else if (legArmor != 0)
+            {
+                RemoveExistingArmour();
+            }
+            bonus.Health = armor.stats.Health;
+            bonus.Strength = armor.stats.Strength;
+            bonus.Dexterity = armor.stats.Dexterity;
+            bonus.Intelligence = armor.stats.Intelligence;
+            hero.stats.Health += bonus.Health;
+            hero.stats.Strength += bonus.Strength;
+            hero.stats.Dexterity += bonus.Dexterity;
+            hero.stats.Intelligence += bonus.Intelligence;
             Console.WriteLine($"{hero}");
-
         }
-        public void RemoveOldArmour()
+
+        public void RemoveExistingArmour()
         {
-            armorslot = 0;
-            Console.WriteLine($"{armorslot}");
-
+            hero.stats.Health -= bonus.Health; 
+            hero.stats.Strength -= bonus.Strength;
+            hero.stats.Dexterity -= bonus.Dexterity;
+            hero.stats.Intelligence -= bonus.Intelligence;
         }
 
+        public void SlotToHero(Armor armor)
+        {
+            if (armor.slot == Slots.Head)
+            {
+                headArmor = 1;
+            }
+            else if (armor.slot == Slots.Body)
+            {
+                bodyArmor = 1;
+            }
+            else if (armor.slot == Slots.Legs)
+            {
+                legArmor = 1;
+            }
+
+        }
         public void EquipArmor(Armor armor, Slots heroSlot)
         {
             if(armor.slot != heroSlot)
@@ -57,37 +86,29 @@ namespace RPGame.Hero
                 Console.WriteLine($"You can't put {armor.slot} on your {heroSlot}");
                 return;
             }
-
             if (armor.level <= hero.level)
+            {
+                if (armor.armorType == ArmorType.Cloth)
                 {
-                    if (armor.armorType == ArmorType.Cloth)
-                    {
-                        NewStats(armor);
-                     }
-                else if (armor.armorType == ArmorType.Leather)
-                    {
-                        NewStats(armor);
-
-                    }
-                    else if (armor.armorType == ArmorType.Plate)
-                    {
-                        NewStats(armor);
-                    }
+                    NewStats(armor);
                 }
-            
+                else if (armor.armorType == ArmorType.Leather)
+                {
+                    NewStats(armor);
+                }
+                else if (armor.armorType == ArmorType.Plate)
+                {
+                    NewStats(armor);
+                }
+            }
+
             else
             {
                 Console.Write("You are not on a level to eqiup this armor");
             }
         }
 
-
-        public void afterEqup()
-        {
-            Console.WriteLine($"{hero}");
-        }
-
-        public void attack()
+        public void Attack()
         {
             //If hero doesnt have a weapon, no damage
             if (weaponSlot == 0)
@@ -123,7 +144,7 @@ namespace RPGame.Hero
             }
             else
             {   //If hero is not on a level to equip this weapon
-                Console.Write("You are not on a level to eqiup this weapon");
+                Console.Write("\nYou are not on a level to eqiup this weapon");
             }
         }
     }
