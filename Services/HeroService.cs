@@ -14,9 +14,11 @@ namespace RPGame.Hero
 
         protected int damage;
 
+        //init with 0, can have 1
         protected int weaponSlot;
         protected Stats bonus;
 
+        //init with 0, can have 1 of each
         protected int legArmor;
         protected int bodyArmor;
         protected int headArmor;
@@ -31,8 +33,10 @@ namespace RPGame.Hero
             legArmor = 0;
         }
 
+        //Generates new stats(attributes) to hero.
         public void NewStats(Armor armor)
         {
+            //Replace armorStats (attributes) if exist
             if(headArmor != 0)
             {
                 RemoveExistingArmour();
@@ -55,6 +59,7 @@ namespace RPGame.Hero
             Console.WriteLine($"{hero}");
         }
 
+        //Remove stats(attributes) from hero when replacing armor
         public void RemoveExistingArmour()
         {
             hero.stats.Health -= bonus.Health; 
@@ -62,7 +67,7 @@ namespace RPGame.Hero
             hero.stats.Dexterity -= bonus.Dexterity;
             hero.stats.Intelligence -= bonus.Intelligence;
         }
-
+        //Sets the different armorSlot to 1 if right slotType is collected
         public void SlotToHero(Armor armor)
         {
             if (armor.slot == Slots.Head)
@@ -79,15 +84,19 @@ namespace RPGame.Hero
             }
 
         }
+        //Equip armor
         public void EquipArmor(Armor armor, Slots heroSlot)
         {
+            //if Hero try to sets armor slot to a different slot
             if(armor.slot != heroSlot)
             {
                 Console.WriteLine($"You can't put {armor.slot} on your {heroSlot}");
                 return;
             }
+            //Can't equip if armour level is higher than hero level
             if (armor.level <= hero.level)
             {
+                //based on type, calculate new slots for hero
                 if (armor.armorType == ArmorType.Cloth)
                 {
                     NewStats(armor);
@@ -101,7 +110,6 @@ namespace RPGame.Hero
                     NewStats(armor);
                 }
             }
-
             else
             {
                 Console.Write("You are not on a level to eqiup this armor");
@@ -110,7 +118,7 @@ namespace RPGame.Hero
 
         public void Attack()
         {
-            //If hero doesnt have a weapon, no damage
+            //If a hero doesnt have a weapon, no damage
             if (weaponSlot == 0)
             {
                 Console.WriteLine("Attacking for: " + 0);

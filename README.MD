@@ -1,11 +1,18 @@
 ﻿# RPG Characters
 C# console application creating RPG characters.
-Generate some characters and demonstrate the level up/stats increase by giving them experience points. 
 
 ## Table of Contents
 - [Install](#install)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
+
+## Features
+- Generate some characters and demonstrate the level up/stats increase by giving them experience points. 
+- Generate different kind of weapons and armors. 
+- Demonstration of weapons, different scaling depends on type and level
+- Demonstration of armors, different scalling depends on type, level and slots(Head, Body, Legs)
+- Demonstration of characters equipping diffrent kinds of armor and weapons. 
+- Demonstration of characters amount of damage to deal when having a weapon. 
 
 ## Install
 - Clone 
