@@ -16,15 +16,16 @@ namespace RPGame.Items.armor
 
         public ArmorType armorType;
 
-        protected Slots slot;
+        public Slots slot;
 
         public Armor() { }
 
-        public Armor(string name)
+        public Armor(string name, Slots slot)
         {
             this.name = name;
             level = 1;
             stats = new Stats();
+            this.slot = slot;
         }
 
         protected abstract void SetBaseStats();

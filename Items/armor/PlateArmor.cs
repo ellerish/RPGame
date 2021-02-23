@@ -10,7 +10,7 @@ namespace RPGame.Items.armor
 
         public PlateArmor() : base() { }
 
-        public PlateArmor(string name) : base(name)
+        public PlateArmor(string name, Slots slot) : base(name, slot)
         {
             SetBaseStats();
             SetArmorType();
@@ -28,7 +28,7 @@ namespace RPGame.Items.armor
             stats.Strength = 3;
         }
 
-        public void ScaleStatsByLevelAndSlot(int level, Slots slot)
+        public void ScaleStatsByLevelAndSlot(int level)
         {
             double result = (stats.Health + 12 * level) * (int)slot / 100;
             stats.Health = (int)Math.Floor(result);
@@ -44,7 +44,7 @@ namespace RPGame.Items.armor
         public override string ToString()
         {
             return $"\nItem stats for: {name}\nType: {armorType}\n" +
-                $"Bonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
+                $"Slot : {slot}\nBonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
                  $"Bonus strength: {stats.Strength}\nLevel: {level}";
         }
     }

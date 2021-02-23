@@ -10,7 +10,7 @@ namespace RPGame.Items.armor
 
         public ClothArmor() : base() { }
 
-        public ClothArmor(string name) : base(name)
+        public ClothArmor(string name, Slots slot) : base(name, slot)
         {
             SetBaseStats();
             SetArmorType();
@@ -36,7 +36,7 @@ namespace RPGame.Items.armor
             this.level = level;
         }
 
-        public void ScaleStatsByLevelAndSlot(int level, Slots slot)
+        public void ScaleStatsByLevelAndSlot(int level)
         {          
             double result = (stats.Health + 5 * level) * (int)slot/100;
             stats.Health = (int)Math.Floor (result);
@@ -53,7 +53,7 @@ namespace RPGame.Items.armor
         public override string ToString()
         {
             return $"\nItem stats for: {name}\nType: {armorType}\n" +
-                $"Bonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
+                $"Slot : {slot}\nBonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
                  $"Bonus intelligence: {stats.Intelligence}\nLevel: {level}";
         }
 

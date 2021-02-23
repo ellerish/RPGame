@@ -18,102 +18,111 @@ namespace RPGame.Hero
         Armor body;
         Armor legs;*/
 
-        int head;
-        int body;
-        int legs;
+        Slots slots;
         int weaponSlot;
-
+        int armorslot;
+        public Stats bonus;
 
         public HeroService(Hero hero)
         {
             this.hero = hero;
             weaponSlot = 0;
-          
-
+            armorslot = 0;
+            bonus = new Stats();
+            // bonus;
         }
 
-        public Boolean ChangeWeapon()
+        public void NewStats(Armor armor)
         {
-            if(weaponSlot == 1)
-            {
-                Console.WriteLine("Du må bytte stats");
-            } 
-            return false;
-        }
+            bonus.Health = hero.stats.Health += armor.stats.Health;
+            bonus.Strength = hero.stats.Strength += armor.stats.Strength;
+            bonus.Dexterity = hero.stats.Dexterity += armor.stats.Dexterity;
+            bonus.Intelligence = hero.stats.Intelligence += armor.stats.Intelligence;
+            //  heroSlot = slots;
+            //  Console.WriteLine($"{slots} = {heroSlot}");
+            Console.WriteLine($"{hero}");
 
-        //if this slot != null repalce 
+        }
+        public void RemoveOldArmour()
+        {
+            armorslot = 0;
+            Console.WriteLine($"{armorslot}");
+
+        }
 
         public void EquipArmor(Armor armor, Slots heroSlot)
         {
-            if (armor.level <= hero.level)
+            if(armor.slot != heroSlot)
             {
-                if (armor.armorType == ArmorType.Cloth)
-                {
-                    hero.stats.Health += armor.stats.Health;
-                    hero.stats.Dexterity += armor.stats.Dexterity;
-                    hero.stats.Intelligence += armor.stats.Intelligence;
-                    Console.WriteLine($"{hero}");
-                  //  heroSlot = slots;
-                  //  Console.WriteLine($"{slots} = {heroSlot}");
+                Console.WriteLine($"You can't put {armor.slot} on your {heroSlot}");
+                return;
+            }
 
-                }
-                else if(armor.armorType == ArmorType.Leather)
+            if (armor.level <= hero.level)
                 {
-                    hero.stats.Health += armor.stats.Health;
-                    hero.stats.Dexterity += armor.stats.Dexterity;
-                    hero.stats.Strength += armor.stats.Strength;
-                } else if(armor.armorType == ArmorType.Plate)
-                {
-                    hero.stats.Health += armor.stats.Health;
-                    hero.stats.Dexterity += armor.stats.Dexterity;
-                    hero.stats.Strength += armor.stats.Strength;
+                    if (armor.armorType == ArmorType.Cloth)
+                    {
+                        NewStats(armor);
+                     }
+                else if (armor.armorType == ArmorType.Leather)
+                    {
+                        NewStats(armor);
+
+                    }
+                    else if (armor.armorType == ArmorType.Plate)
+                    {
+                        NewStats(armor);
+                    }
                 }
-            } else
+            
+            else
             {
                 Console.Write("You are not on a level to eqiup this armor");
             }
         }
 
+
+        public void afterEqup()
+        {
+            Console.WriteLine($"{hero}");
+        }
+
         public void attack()
         {
+            //If hero doesnt have a weapon, no damage
             if (weaponSlot == 0)
             {
                 Console.WriteLine("Attacking for: " + 0);
             }
             else
-            {
+            {   
                 Console.WriteLine($" {hero}\n Attacking for: {damage}");
             }
         }
 
 
         public void EquipWeapon(Weapon weapon)
-        {       //Check if hero can collect weapon
+        {       //Check if hero can collect weapon at that level
             if (weapon.level <= hero.level)
             {
+                //based on type, calculate damage, set weaponslot to 1
                 if (weapon.weaponType == WeaponType.Magic)
                 {
                     damage =  weapon.baseDamage + hero.stats.Intelligence * 3;
-                 //   Console.WriteLine($" {hero}\nAttacking for: { damage}");
-                    weaponSlot = 1;
                 }
                 else if (weapon.weaponType == WeaponType.Meele)
                 {
                     double strengthValue = weapon.baseDamage + hero.stats.Strength * 1.5;
                     damage = (int)Math.Floor(strengthValue);
-                  //  Console.WriteLine($" {hero}\nAttacking for: { damage}");
-                    weaponSlot = 1;
-
                 }
                 else if (weapon.weaponType == WeaponType.Ranged)
                 {
                     damage = weapon.baseDamage + hero.stats.Dexterity * 2;
-                //    Console.WriteLine($" {hero}\nAttacking for: { damage}  ");
-                    weaponSlot = 1;
-
                 }
-            } else
-            {
+                weaponSlot = 1;
+            }
+            else
+            {   //If hero is not on a level to equip this weapon
                 Console.Write("You are not on a level to eqiup this weapon");
             }
         }

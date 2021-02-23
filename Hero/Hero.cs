@@ -40,7 +40,7 @@ namespace RPGame.Hero
             xpToNext = (int) Math.Floor(resXpToNext);
         }
 
-        public Boolean CanLevelUp()
+        protected bool CanLevelUp()
         {
             if (xpToNext <= experiencePoints)
             {

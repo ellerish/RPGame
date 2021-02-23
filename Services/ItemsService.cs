@@ -14,5 +14,8 @@ namespace RPGame.Services
         void EquipArmor(Armor armor, Slots slot);
 
         void EquipWeapon(Weapon weapon);
+
+        //        void EquipWeapon(WeaponService weapon);
+
     }
 }
