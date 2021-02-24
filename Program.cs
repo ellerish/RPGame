@@ -33,15 +33,15 @@ namespace RPGame
              MagicWeapon magicWeapon = new MagicWeapon("MagicWeapon");
              Console.WriteLine($"\nMagic Weapon details: {magicWeapon}");
              magicWeapon.LevelScale(2);
-             Console.WriteLine($"\nMagic Weapon details with level scale: {magicWeapon}");
+             Console.WriteLine($"\nMagic Weapon details on level 2: {magicWeapon}");
 
              MeleeWeapon meele = new MeleeWeapon("Infinity Edge");
              meele.LevelScale(11);
-             Console.WriteLine($"\nMeele Weapon details with level scale: {meele}");
+             Console.WriteLine($"\nMeele Weapon details on level 11: {meele}");
 
              RangedWeapon rangedWeapon = new RangedWeapon("Beyond distance");
              rangedWeapon.LevelScale(4);
-             Console.WriteLine($"\nRanged Weapon details with level scale: {rangedWeapon}");
+             Console.WriteLine($"\nRanged Weapon details on level 4: {rangedWeapon}");
 
             
               ClothArmor armorMask = new ClothArmor("Abyssal Mask", Slots.Head);
@@ -65,18 +65,18 @@ namespace RPGame
 
                HeroService warriorGame = new HeroService(war);
                warriorGame.EquipWeapon(meele);
-               Console.WriteLine("\n----Warrior equips ClothAmor: Head----");
+               Console.WriteLine("\n----Warrior equips ClothAmor lvl 6:Head:----");
                warriorGame.EquipArmor(armorMask, Slots.Head);
-               Console.WriteLine("\n----Warrior equips PlateArmor: Body----");
+               Console.WriteLine("\n----Warrior equips PlateArmor lvl 3: Body----");
                warriorGame.EquipArmor(armorPlate, Slots.Body);
-               Console.WriteLine("\n----Warrior equips LeatherArmor: Legs----");
+               Console.WriteLine("\n----Warrior equips LeatherArmor lvl 8: Legs----");
                warriorGame.EquipArmor(armorLeather, Slots.Legs);
 
                Console.WriteLine("\n----Demo: Hero try to put HeadItem on Legs----");
                warriorGame.RemoveExistingArmour();
                warriorGame.EquipArmor(armorMask, Slots.Legs);
 
-               Console.WriteLine("\n----Warrior equips ClothArmor on Legs again----");
+               Console.WriteLine("\n----Warrior equips ClothArmor: Legs again----");
                warriorGame.EquipArmor(armorLeather, Slots.Legs);
 
                Console.WriteLine("\n----Demo: Hero's can't eqiup item with higher level----");
@@ -84,7 +84,7 @@ namespace RPGame
                magicaGame.EquipWeapon(meele);
 
                Console.WriteLine("\n----Demo: Hero:Warrior attacking with weapon: meele----");
-                warriorGame.Attack();
+               warriorGame.Attack();
                Console.WriteLine("\n----Demo: Hero's attacking without weapon----");
                magicaGame.Attack();
         }
