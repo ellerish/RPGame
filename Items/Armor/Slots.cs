@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPGame.Items.Armor
 {
-    //enum for Slots, assiged to scale value
+    //enum for Slots, assiged with value for scaling
 
     public enum Slots
     {

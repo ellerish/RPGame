@@ -8,25 +8,25 @@ namespace RPGame.Items.Armor
     //Parent class Armor
     public abstract class Armor
     {
-        protected string name;
+        protected string Name { get; set; }
 
-        public int level;
+        public int Level { get; set; }
 
         public Stats stats;
 
         //Sets type: Cloth, Leather, Armor
         public ArmorType armorType;
 
-        public Slots slot;
+        public Slots ArmorSlot { get; set; }
 
         public Armor() { }
 
         public Armor(string name, Slots slot)
         {
-            this.name = name;
-            level = 1;
+            Name = name;
+            Level = 1;
             stats = new Stats();
-            this.slot = slot;
+            ArmorSlot = slot;
         }
 
         //All amors generate baseStats(Attributes)

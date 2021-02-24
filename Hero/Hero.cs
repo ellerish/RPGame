@@ -33,7 +33,7 @@ namespace RPGame.Hero
             stats = new Stats();
         }
 
-        //Calculate xpToNext after getting points.
+        //Calculate xpToNext after getting experience points.
         protected int GetXpToNext()
         {
             return xpToNext - experiencePoints;

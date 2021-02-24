@@ -16,101 +16,47 @@ namespace RPGame.Hero
         protected int weaponSlot;
         protected Stats bonus;
 
-        //init with 0, hero can have 1 of each
-        protected int legArmor;
-        protected int bodyArmor;
-        protected int headArmor;
-
+        //Dictionary/Collection to store equippedArmor
+        public Dictionary<Slots, Armor> EquippedArmor { get; set; } = new Dictionary<Slots, Armor>();
 
         public HeroService(Hero hero)
         {
             this.hero = hero;
             weaponSlot = 0;
             bonus = new Stats();
-            headArmor = 0;
-            bodyArmor = 0;
-            legArmor = 0;
         }
 
         //Generates new stats(attributes) to hero.
-        public void NewStats(Armor armor)
+        public void NewStats()
         {
-
-            //Replace armorStats (attributes) if exist
-            if(headArmor != 0)
+            //generate bonus from equippedArmor Collection
+            foreach (Armor armor in EquippedArmor.Values)
             {
-                RemoveExistingArmour();
-               
-            } else if(bodyArmor != 0)
-            {
-                RemoveExistingArmour();
-            } else if (legArmor != 0)
-            {
-                RemoveExistingArmour();
+                bonus.Health = armor.stats.Health;
+                bonus.Strength = armor.stats.Strength;
+                bonus.Dexterity = armor.stats.Dexterity;
+                bonus.Intelligence = armor.stats.Intelligence;
             }
-            bonus.Health = armor.stats.Health;
-            bonus.Strength = armor.stats.Strength;
-            bonus.Dexterity = armor.stats.Dexterity;
-            bonus.Intelligence = armor.stats.Intelligence;
             hero.stats.Health += bonus.Health;
             hero.stats.Strength += bonus.Strength;
             hero.stats.Dexterity += bonus.Dexterity;
             hero.stats.Intelligence += bonus.Intelligence;
             Console.WriteLine($"{hero}");
         }
-
-        //Remove stats(attributes) from hero when replacing armor
-        public void RemoveExistingArmour()
-        {
-            hero.stats.Health -= bonus.Health; 
-            hero.stats.Strength -= bonus.Strength;
-            hero.stats.Dexterity -= bonus.Dexterity;
-            hero.stats.Intelligence -= bonus.Intelligence;
-        }
-        //Sets the different armorSlot to 1 if right slotType is collected
-        public void SlotToHero(Armor armor)
-        {
-            if (armor.slot == Slots.Head)
-            {
-                NewStats(armor);
-                headArmor = 1;
-            }
-            else if (armor.slot == Slots.Body)
-            {
-                NewStats(armor);
-                bodyArmor = 1;
-            }
-            else if (armor.slot == Slots.Legs)
-            {
-                NewStats(armor);
-                legArmor = 1;
-            }
-
-        }
+       
         //Equip armor
-        public void EquipArmor(Armor armor, Slots heroSlot)
+        public void EquipArmor(Armor armor)
         {
-            //if Hero try to sets armor slot to a different slot
-            if(armor.slot != heroSlot)
-            {
-                Console.WriteLine($"You can't put {armor.slot} on your {heroSlot}");
-                return;
-            }
             //Can't equip if armour level is higher than hero level
-            if (armor.level <= hero.level)
-            {
-                //based on type, calculate new slots for hero
-                if (armor.armorType == ArmorType.Cloth)
+            if (armor.Level <= hero.level)
+            {           //replace if exist else add to generic collection
+                if (EquippedArmor.ContainsKey(armor.ArmorSlot))
                 {
-                    SlotToHero(armor); 
+                    EquippedArmor[armor.ArmorSlot] = armor;
                 }
-                else if (armor.armorType == ArmorType.Leather)
-                {
-                    SlotToHero(armor);
-                }
-                else if (armor.armorType == ArmorType.Plate)
-                {
-                    SlotToHero(armor);
+                else
+                {   
+                EquippedArmor.Add(armor.ArmorSlot, armor);
                 }
             }
             else

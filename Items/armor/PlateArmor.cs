@@ -32,22 +32,22 @@ namespace RPGame.Items.Armor
         //Calculate new attributes(stats) based on level and slot
         public void ScaleStatsByLevelAndSlot(int level)
         {
-            double result = (stats.Health + 12 * level) * (int)slot / 100;
+            double result = (stats.Health + 12 * level) * (int)ArmorSlot / 100;
             stats.Health = (int)Math.Floor(result);
 
-            double resultDex = (stats.Dexterity + 1 * level) * (int)slot / 100;
+            double resultDex = (stats.Dexterity + 1 * level) * (int)ArmorSlot / 100;
             stats.Dexterity = (int)Math.Floor(resultDex);
 
-            double resultStrength = (stats.Strength + 2 * level) * (int)slot / 100;
+            double resultStrength = (stats.Strength + 2 * level) * (int)ArmorSlot / 100;
             stats.Strength = (int)Math.Floor(resultStrength);
-            this.level = level;
+            this.Level = level;
         }
 
         public override string ToString()
         {
-            return $"\nItem stats for: {name}\nType: {armorType}\n" +
-                $"Slot : {slot}\nBonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
-                 $"Bonus strength: {stats.Strength}\nLevel: {level}";
+            return $"\nItem stats for: {Name}\nType: {armorType}\n" +
+                $"Slot : {ArmorSlot}\nBonus HP: {stats.Health}\nBonus dex: {stats.Dexterity}\n" +
+                 $"Bonus strength: {stats.Strength}\nLevel: {Level}";
         }
     }
 }
