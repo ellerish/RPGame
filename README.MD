@@ -2,6 +2,7 @@
 C# console application creating RPG characters.
 
 ## Table of Contents
+- [Features](#features)
 - [Install](#install)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
@@ -33,7 +34,6 @@ C# console application creating RPG characters.
 - WeaponType, enums to define type of weapon.
 
 ### Services/:
-- Itemservice: declarations of methods for heroservice
 - HeroService: implementing methods for a hero to equip weapons or armor, and attack.
 
 ## Install

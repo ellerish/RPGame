@@ -7,7 +7,7 @@ namespace RPGame.Hero
     /*
     * Inherit from Hero.
     * Set start attributes/stats
-    * LevelUp - get extra attributes/stats pr level
+    * LevelUp - set extra attributes/stats pr level
    */
     public class Mage: Hero
     {

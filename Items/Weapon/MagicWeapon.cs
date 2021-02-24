@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RPGame.Items.Weapon
 {
-    //Inherit from parent: Weapon
+    //Inherit from base: Weapon
 
     class MagicWeapon : Weapon
     {
@@ -16,6 +16,7 @@ namespace RPGame.Items.Weapon
             SetWeaponType();
             SetBaseDamage();
         }
+        //init base damage
         protected override void SetBaseDamage()
         {
             baseDamage = 25;

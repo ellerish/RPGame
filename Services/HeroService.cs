@@ -1,13 +1,12 @@
 ﻿using RPGame.Items.Armor;
 using RPGame.Items.Weapon;
-using RPGame.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace RPGame.Hero
 {
-    class HeroService: ItemsService
+    class HeroService
     {
         protected Hero hero;
 

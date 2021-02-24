@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RPGame.Items.Weapon
 {
-    //Inherit from parent: Weapon
+    //Inherit from base: Weapon
     class RangedWeapon : Weapon
     {
         public RangedWeapon() : base() { }
@@ -15,11 +15,13 @@ namespace RPGame.Items.Weapon
             SetWeaponType();
             SetBaseDamage();
         }
+        //init base damage
         protected override void SetBaseDamage()
         {
             baseDamage = 5;
         }
 
+        //init type of weapon
         protected override void SetWeaponType()
         {
             weaponType = WeaponType.Meele;
