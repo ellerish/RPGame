@@ -49,7 +49,7 @@ namespace RPGame.Hero
         {
             //Can't equip if armour level is higher than hero level
             if (armor.Level <= hero.level)
-            {           //replace if exist else add to generic collection
+            {           //replace if exist, else add to generic collection
                 if (EquippedArmor.ContainsKey(armor.ArmorSlot))
                 {
                     EquippedArmor[armor.ArmorSlot] = armor;
@@ -77,7 +77,6 @@ namespace RPGame.Hero
                 Console.WriteLine($" {hero}\n Attacking for: {damage}");
             }
         }
-
 
         public void EquipWeapon(Weapon weapon)
         {       //Check if hero can collect weapon at that level
