@@ -1,6 +1,5 @@
-﻿using RPGame.Items.armor;
-using RPGame.Items.ItemSlots;
-using RPGame.Items.weapons;
+﻿using RPGame.Items.Armor;
+using RPGame.Items.Weapon;
 using RPGame.Services;
 using System;
 using System.Collections.Generic;
@@ -18,10 +17,11 @@ namespace RPGame.Hero
         protected int weaponSlot;
         protected Stats bonus;
 
-        //init with 0, can have 1 of each
+        //init with 0, hero can have 1 of each
         protected int legArmor;
         protected int bodyArmor;
         protected int headArmor;
+
 
         public HeroService(Hero hero)
         {
@@ -36,6 +36,7 @@ namespace RPGame.Hero
         //Generates new stats(attributes) to hero.
         public void NewStats(Armor armor)
         {
+
             //Replace armorStats (attributes) if exist
             if(headArmor != 0)
             {
@@ -72,14 +73,17 @@ namespace RPGame.Hero
         {
             if (armor.slot == Slots.Head)
             {
+                NewStats(armor);
                 headArmor = 1;
             }
             else if (armor.slot == Slots.Body)
             {
+                NewStats(armor);
                 bodyArmor = 1;
             }
             else if (armor.slot == Slots.Legs)
             {
+                NewStats(armor);
                 legArmor = 1;
             }
 
@@ -99,15 +103,15 @@ namespace RPGame.Hero
                 //based on type, calculate new slots for hero
                 if (armor.armorType == ArmorType.Cloth)
                 {
-                    NewStats(armor);
+                    SlotToHero(armor); 
                 }
                 else if (armor.armorType == ArmorType.Leather)
                 {
-                    NewStats(armor);
+                    SlotToHero(armor);
                 }
                 else if (armor.armorType == ArmorType.Plate)
                 {
-                    NewStats(armor);
+                    SlotToHero(armor);
                 }
             }
             else
@@ -137,7 +141,7 @@ namespace RPGame.Hero
                 //based on type, calculate damage, set weaponslot to 1
                 if (weapon.weaponType == WeaponType.Magic)
                 {
-                    damage =  weapon.baseDamage + hero.stats.Intelligence * 3;
+                    damage = weapon.baseDamage +  hero.stats.Intelligence * 3;
                 }
                 else if (weapon.weaponType == WeaponType.Meele)
                 {

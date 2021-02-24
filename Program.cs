@@ -1,11 +1,14 @@
 ﻿using RPGame.Hero;
-using RPGame.Items.armor;
-using RPGame.Items.ItemSlots;
-using RPGame.Items.weapons;
+using RPGame.Items.Armor;
+using RPGame.Items.Weapon;
 using System;
 
 namespace RPGame
 {
+    /*
+     * Demostrating creation of various heros and items.
+     * Demonstrating Hero equip items/attack
+     */
     class Program
     {
         static void Main(string[] args)
@@ -80,7 +83,7 @@ namespace RPGame
                HeroService magicaGame = new HeroService(magica);
                magicaGame.EquipWeapon(meele);
 
-               Console.WriteLine("\n----Demo: Hero's attacking with weapon----");
+               Console.WriteLine("\n----Demo: Hero:Warrior attacking with weapon: meele----");
                 warriorGame.Attack();
                Console.WriteLine("\n----Demo: Hero's attacking without weapon----");
                magicaGame.Attack();

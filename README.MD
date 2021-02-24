@@ -14,6 +14,28 @@ C# console application creating RPG characters.
 - Demonstration of characters equipping diffrent kinds of armor and weapons. 
 - Demonstration of characters amount of damage to deal when having a weapon. 
 
+### Hero/:
+- Abstract class Hero, defines base class and method of a hero.
+- Mage, Ranger, Warrior class are subclasses from parent(Hero)
+- Stats class, properties for stats(Attributes) with getters, setters health, strength, dexterity, intelligence
+
+### Items/:
+
+#### Armor/:
+- Abstract class Armor, defines base class and methods for armors
+- ClothArmor, LeatherArmor, Platearmor are sublcasses of parent(Armor), overriding methods
+- ArmorType, enums to define type of armor
+- Slots, enums for slots(body, head, legs) assiged with scale value
+
+#### Weapon/:
+- Abstract class Weapon, defines base class and methids for weapons.
+- MagicWeapon, MeleeWeapon, RangedWeapon are sublacces of parent(Weapon), overriding methods
+- WeaponType, enums to define type of weapon.
+
+### Services/:
+- Itemservice: declarations of methods for heroservice
+- HeroService: implementing methods for a hero to equip weapons or armor, and attack.
+
 ## Install
 - Clone 
 - Open in Visual Studio

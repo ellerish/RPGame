@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame.Items.weapons
+namespace RPGame.Items.Weapon
 {
     //Parent class Weapon
     public abstract class Weapon

@@ -1,10 +1,9 @@
 ﻿using RPGame.Hero;
-using RPGame.Items.ItemSlots;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame.Items.armor
+namespace RPGame.Items.Armor
 {
     //Parent class Armor
     public abstract class Armor

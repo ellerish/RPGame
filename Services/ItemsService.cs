@@ -1,7 +1,6 @@
 ﻿using RPGame.Hero;
-using RPGame.Items.armor;
-using RPGame.Items.ItemSlots;
-using RPGame.Items.weapons;
+using RPGame.Items.Armor;
+using RPGame.Items.Weapon;
 using System;
 using System.Collections.Generic;
 using System.Text;

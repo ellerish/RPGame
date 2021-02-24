@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RPGame.Items.ItemSlots
+namespace RPGame.Items.Armor
 {
     //enum for Slots, assiged to scale value
 
