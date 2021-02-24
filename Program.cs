@@ -65,12 +65,12 @@ namespace RPGame
                  warriorGame.EquipWeapon(meele);
                  Console.WriteLine("\n----Warrior equips ClothAmor lvl 6:Head:----");
                  warriorGame.EquipArmor(armorMask);
+                 warriorGame.NewStats();
+    
                  Console.WriteLine("\n----Warrior equips PlateArmor lvl 3: Body----");
                  warriorGame.EquipArmor(armorPlate);
                  Console.WriteLine("\n----Warrior equips LeatherArmor lvl 8: Legs----");
                  warriorGame.EquipArmor(armorLeather);
-                 warriorGame.NewStats();
-
                  Console.WriteLine("\n----Warrior equips ClothArmor: Legs again----");
                  warriorGame.EquipArmor(clothPants);
                  warriorGame.NewStats();

@@ -41,7 +41,8 @@ namespace RPGame.Hero
             hero.stats.Strength += bonus.Strength;
             hero.stats.Dexterity += bonus.Dexterity;
             hero.stats.Intelligence += bonus.Intelligence;
-            Console.WriteLine($"{hero}");
+
+            Console.WriteLine($"{hero}\nArmors count: {EquippedArmor.Count}");
         }
        
         //Equip armor
