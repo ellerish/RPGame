@@ -28,7 +28,7 @@ C# console application creating RPG characters.
 - Slots, enums for slots(body, head, legs) assiged with scale value
 
 #### Weapon/:
-- Abstract class Weapon, defines base class and methids for weapons.
+- Abstract class Weapon, defines base class and methods for weapons.
 - MagicWeapon, MeleeWeapon, RangedWeapon are sublacces of parent(Weapon), overriding methods
 - WeaponType, enums to define type of weapon.
 
